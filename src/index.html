@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4e9cb2" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Current.cy</title>
+  </head>
+  <body>
+    <main>
+      <div class="nav">
+        <div class="nav_wrapper">
+          <a href="#"
+            ><img
+              width="40px"
+              src="./assets/images/logo.svg"
+              alt="Current.cy logo"
+            />
+            <p>Current.cy</p>
+          </a>
+        </div>
+      </div>
+
+      <section>
+        <div class="section_heading">
+          <h1>Simple currency converter &#128200;</h1>
+          <p>Everything you need for your daily use</p>
+        </div>
+
+        <div class="converter">
+          <div class="converter_field">
+            <div class="field_element">
+              <label for="">Enter amount&colon;</label>
+              <input type="number" />
+            </div>
+
+            <div class="field_element">
+              <label for="">From&colon;</label>
+              <input type="select" />
+            </div>
+            <span
+              ><svg
+                style="rotate: 90deg; width: 30px"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
+                />
+              </svg>
+            </span>
+            <div class="field_element">
+              <label for="">To&colon;</label>
+              <input type="select" />
+            </div>
+
+            <button>Convert</button>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div>
+          <p>Copyright &copy; 2023 - Bogdan Bulakh</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
