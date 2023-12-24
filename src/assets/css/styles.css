@@ -88,9 +88,25 @@ section h1 {
 }
 
 input {
+  -webkit-appearance: none;
+  appearance: none;
   padding: 15px 10px;
   border-radius: 5px;
   border: 1px solid #bbbbbb;
+  background-color: white;
+  outline-color: #ffde34;
+}
+
+select {
+  background: url(https://ik.imagekit.io/zxaewhloxf/arrow.svg?updatedAt=1703427789279)
+    no-repeat 98% 50%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 1px solid #bbbbbb;
+  background-color: white;
   outline-color: #ffde34;
 }
 
@@ -113,8 +129,7 @@ button {
 }
 
 button:active {
-    background-color: #50b6fb;
-
+  background-color: #50b6fb;
 }
 
 footer {
