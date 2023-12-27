@@ -29,6 +29,8 @@ main {
 
 .nav_content {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px 0px 10px 0px;
@@ -52,7 +54,7 @@ main {
 }
 
 .nav a:hover {
-  background-color: #ddd;
+  background-color: transparent;
   color: black;
 }
 
@@ -126,13 +128,32 @@ label {
   font-weight: 500;
 }
 
-.swapButton {
+.secondaryButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
+  border-radius: 5px;
+  padding: 10px;
   border: none;
   width: fit-content;
   cursor: pointer;
 }
 
+.secondaryButton:hover {
+  background-color: transparent;
+  color: black;
+}
+
+@media (hover: hover) {
+  .secondaryButton:hover {
+    background-color: #ddd;
+  }
+
+  .nav a:hover {
+    background-color: #ddd;
+  }
+ }
 
 
 .convertButton {
