@@ -111,8 +111,10 @@ select {
   padding: 15px 10px;
   border-radius: 5px;
   border: 1px solid #bbbbbb;
+  color: black;
   background-color: white;
   outline-color: #ffde34;
+  cursor: pointer;
 }
 
 label {
@@ -128,6 +130,7 @@ label {
   background: none;
   border: none;
   width: fit-content;
+  cursor: pointer;
 }
 
 
@@ -139,6 +142,7 @@ label {
   border: none;
   background-color: #0099ff;
   color: white;
+  cursor: pointer;
 }
 
 .convertButton:active {
