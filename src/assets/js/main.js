@@ -192,11 +192,29 @@ toSelect.innerHTML = generateOptions(currencies);
 fetch(
   "https://openexchangerates.org/api/latest.json?app_id=fd990a81b594417cbff72b44d44316e6"
 )
-  .then((response) => response.json())
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Response Error");
+    }
+    return response.json();
+  })
   .then((data) => {
     window.exchangeRates = data.rates;
-  });
+    fromSelect.value = "USD";
+    toSelect.value = "RUB";
+  })
+  .catch((err) => alert(err));
 
+// Add functionality for swap button
+document.querySelector("#swapButton").addEventListener("click", () => {
+  let inputFrom = document.querySelector("#fromCurrency");
+  let inputTo = document.querySelector("#toCurrency");
+  let inputSwapped = inputFrom.value;
+  inputFrom.value = inputTo.value;
+  inputTo.value = inputSwapped;
+});
+
+// Add functionality for convert button
 document.querySelector("#convertButton").addEventListener("click", () => {
   // Get the selected currencies and the amount to be converted
   const fromCurrency = fromSelect.value;
