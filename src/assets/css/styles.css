@@ -23,7 +23,6 @@ main {
 
 .nav {
   background-color: #f6f6f6;
-  overflow: hidden;
   padding: 0 15px;
 }
 
@@ -143,6 +142,35 @@ label {
 .secondaryButton:hover {
   background-color: transparent;
   color: black;
+}
+
+.dropdown {
+  position: relative;
+  z-index: 2;
+}
+
+
+.dropdown_content {
+  list-style-type: none;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 0 20px;
+  min-width: 250px;
+}
+
+.dropdown_content li {
+  border-bottom: 2px solid #e7e7e7 ;
+  padding: 20px 0;
+ 
+}
+
+.dropdown_content li:last-of-type {
+  border-bottom: none;
+  
 }
 
 @media (hover: hover) {
