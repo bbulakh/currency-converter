@@ -228,5 +228,5 @@ document.querySelector("#convertButton").addEventListener("click", () => {
 
   // Display the converted amount
   document.querySelector(".output p").textContent =
-    [toCurrency] + ": " + convertedAmount.toFixed(2);
+    toCurrency + ": " + convertedAmount.toFixed(2);
 });
