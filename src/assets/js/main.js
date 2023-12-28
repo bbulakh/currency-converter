@@ -1,5 +1,8 @@
-const fromSelect = document.querySelector("#fromCurrency");
-const toSelect = document.querySelector("#toCurrency");
+const fromSelect = document.getElementById("fromCurrency");
+const toSelect = document.getElementById("toCurrency");
+const dropdownButton = document.getElementById("dropdownButton");
+const dropdownMenu = document.querySelector(".dropdown_content");
+const historyStorage = [];
 
 // Copy currencies names from /currencies endpoint of open exchange rates
 const currencies = {
@@ -206,7 +209,7 @@ fetch(
   .catch((err) => alert(err));
 
 // Add functionality for swap button
-document.querySelector("#swapButton").addEventListener("click", () => {
+document.getElementById("swapButton").addEventListener("click", () => {
   let inputFrom = document.querySelector("#fromCurrency");
   let inputTo = document.querySelector("#toCurrency");
   let inputSwapped = inputFrom.value;
@@ -215,11 +218,11 @@ document.querySelector("#swapButton").addEventListener("click", () => {
 });
 
 // Add functionality for convert button
-document.querySelector("#convertButton").addEventListener("click", () => {
+document.getElementById("convertButton").addEventListener("click", () => {
   // Get the selected currencies and the amount to be converted
   const fromCurrency = fromSelect.value;
   const toCurrency = toSelect.value;
-  const amount = document.querySelector("#amount").value;
+  const amount = document.getElementById("amount").value;
 
   // Perform the currency conversion
   const convertedAmount =
@@ -229,4 +232,45 @@ document.querySelector("#convertButton").addEventListener("click", () => {
   // Display the converted amount
   document.querySelector(".output p").textContent =
     toCurrency + ": " + convertedAmount.toFixed(2);
+
+  const conversionDetails = {
+    fromCurrency: fromCurrency,
+    toCurrency: toCurrency,
+    amount: amount,
+    convertedAmount: convertedAmount.toFixed(2),
+  };
+
+  historyStorage.unshift(conversionDetails);
+  updateDropdownList();
 });
+
+// Toggle dropdown list
+const toggleDropdown = () => {
+  dropdownMenu.classList.toggle("show");
+};
+
+dropdownButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleDropdown();
+});
+
+document.documentElement.addEventListener("click", function () {
+  if (dropdownMenu.classList.contains("show")) {
+    toggleDropdown();
+  }
+});
+
+// Update dropdown list with conversions history
+function updateDropdownList() {
+  dropdownMenu.innerHTML = "";
+
+  if (historyStorage.length > 8) {
+    historyStorage.shift()
+  }
+
+  historyStorage.forEach((conversion) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = `${conversion.amount} ${conversion.fromCurrency} = ${conversion.convertedAmount} ${conversion.toCurrency}`;
+    dropdownMenu.appendChild(listItem);
+  });
+}
