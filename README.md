@@ -1,6 +1,6 @@
 # Currency converter
 
-Simple currency bult with HTML, CSS and JS, using Open Exchange Rates API<br>
+Simple currency converter built with HTML, CSS and JS, using Open Exchange Rates API<br>
 MIT licensed - free for personal and commercial use.
 
 ## Templates Preview
